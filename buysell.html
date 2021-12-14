@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="buy/signup-login.css">
+</head>
+<body>
+    <div class="row-fluid">
+        <div class="col-md-4  col-sm-6  col-xs-12 login-box">
+              <ul  class="list-inline tabs">
+                  <li class="active text-center"><a  href="#sign-in" data-toggle="tab">BUY</a></li>
+                  <li class="text-center"><a href="#log-in" data-toggle="tab">Sell</a></li>
+              </ul>
+			  
+			  
+			  
+
+              <div class="tab-content clearfix">
+                  <div class="tab-pane active" id="sign-in">
+                      <div class="row">
+                          <div class="col-md-12 col-sm-12 box-title text-center">
+                              <h2>Buy your crypto</h2>
+                          </div>
+                          <form class="form sign-in-form" method="post" action="payment-form.html">
+                              <div class="col-md-6 col-sm-6">
+                                  <div class="form-group">
+                                      <input type="text"  class="form-control" placeholder="Crypto Value">
+                                  </div>  
+                              </div>
+                              <div class="col-md-6 col-sm-6">
+                                  <div class="form-group">
+                                      <input type="text"  class="form-control" placeholder="Usd/INR">
+                                  </div>  
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <div class="form-group">
+                                      <input type="email"  class="form-control" placeholder="Username">
+                                  </div>  
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <div class="form-group">
+                                      <input type="password"  class="form-control" placeholder="Crypto Id">
+                                  </div>  
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <button type="submit" class="btn btn-block submit-btn">BUY</button>
+                              </div>
+                              
+                          </form>
+                      </div>
+                  </div>
+
+                  <div class="tab-pane" id="log-in">
+                      <div class="row">
+                          <div class="col-md-12 col-sm-12 box-title text-center">
+                              <h2>To</h2>
+                          </div>
+                          <form class="form login-form" method="post" action="payment-form.html">
+                              <div class="col-md-12 col-sm-12">
+                                  <div class="form-group">
+                                      <input type="email"  class="form-control" placeholder="Crypto Address">
+                                  </div>  
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <div class="form-group">
+                                      <input type="password"  class="form-control" placeholder="Crypto Money">
+                                  </div>  
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <button type="submit" class="btn btn-block submit-btn">Sell</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div> 
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</style>
+
+<div id="perspective">
+  <div id="container"></div>
+</div>
+
+
+
+
+</body>
+</html>        
