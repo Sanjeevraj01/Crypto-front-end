@@ -39,10 +39,32 @@
 		  </div>
 		</nav>
 	  </header>
+	
+
+<script type="text/javascript">
+function display(form){
+if (form.username.value=="vj") { 
+		if (form.password.value=="123") 
+		{              
+			location="dashboard.html" 
+		} 
+		else 
+		{
+			alert("Invalid Password")
+		}
+		} 
+		else 
+		{
+			alert("Invalid Username")
+		}
+		}
+</script>
+
+	
 	<div class="container1">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">SignIn</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="#" method="post">				
+			<form name='display(form)' class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="#" method="post">				
 		        <div class="form-group">
 		          <div class="col-xs-12">		            
 		            <div class="control-wrapper">
@@ -71,7 +93,9 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<a  href="dashboard.html" type="submit" value="Log in" class="btn btn-success ">Log in</a>
+					
+		          		<input type="button" value="Login" onClick="display(this.form)"/>
+
 		          		<a href="forgot-pass.html" class="text-right pull-right">Forgot password?</a>
 		          	</div>
 		          </div>
@@ -90,10 +114,9 @@
 		        	</div>
 		        </div>
 		      </form>
-		      <div class="text-cent">
+		      <div class="text-cent" >
 		      	<a href="signup.html" class="templatemo-create-new">Create new account <i class="fa fa-arrow-circle-o-right"></i></a>
 		      </div>
-		</div>
-	</div>
+
 </body>
 </html>

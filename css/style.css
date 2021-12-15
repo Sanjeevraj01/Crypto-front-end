@@ -706,8 +706,8 @@ footer {
 
 #contact {
 	background: #fafafa;
-	padding-top:70px;
-	padding-bottom:80px;
+	padding-top:40px;
+	padding-bottom:250px;
 }
 
 
@@ -751,7 +751,7 @@ footer {
 
 #contact ul {
 	list-style:none;
-	margin-left:-40px;
+	margin-left:-3px;
 	font-size:13px;
 }
 

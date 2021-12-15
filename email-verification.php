@@ -1,3 +1,27 @@
+<?php
+ 
+    if (isset($_POST["verify_email"]))
+    {
+        $email = $_POST["email"];
+        $verification_code = $_POST["verification_code"];
+ 
+        $conn = mysqli_connect("localhost:3306", "root", "", "crypto");
+ 
+        $sql = "UPDATE users SET email_verified_at = NOW() WHERE email = '" . $email . "' AND verification_code = '" . $verification_code . "'";
+        $result  = mysqli_query($conn, $sql);
+ 
+        if (mysqli_affected_rows($conn) == 0)
+        {
+            die("Verification code failed.");
+        }
+ 
+        header("Location: index.html");
+        exit();
+    }
+ 
+?>
+
+
 <!DOCTYPE html>
 <head>
 	<title>Create Account</title>
@@ -41,49 +65,21 @@
 	<div class="container1">
 		<h1 class="margin-bottom-15">SignUp</h1>
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="register.php" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="#" method="post">
 				<div class="form-inner">
-					<div class="form-group">
-			          <!-- <div class="col-md-6">		          	
-			            <label for="first_name" class="control-label"> Name</label>
-			            <input type="text" class="form-control" id="first_name" placeholder="">		            		            		            
-			          </div>   -->
-			          <!-- <div class="col-md-6">		          	
-			            <label for="last_name" class="control-label">Last Name</label>
-			            <input type="text" class="form-control" id="last_name" placeholder="">		            		            		            
-			          </div>              -->
-			        </div>
-			        <div class="form-group">
-			          <div class="col-md-12">		          	
-			            <label for="username" class="control-label">Email</label>
-			            <input type="email" class="form-control" name="email" id="email" placeholder="">		            		            		            
-			          </div>              
-			        </div>			
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
-			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" id="username" name="name" placeholder="">		            		            		            
+			            <label for="username" class="control-label">Veification code</label>
+                        <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>" required>
+			            <input type="text" class="form-control"  name="verification_code" placeholder="" required>		            		            		            
 			          </div>
 			                     
 			        </div>
-			        <div class="form-group">
-			          <div class="col-md-6">
-			            <label for="password" class="control-label">Password</label>
-			            <input type="password" class="form-control" name="password" id="password" placeholder="">
-			          </div>
-			          <!-- <div class="col-md-6">
-			            <label for="password" class="control-label">Confirm Password</label>
-			            <input type="password" class="form-control" id="password_confirm" placeholder="">
-			          </div> -->
-			        </div>
+			       
+			  
 			        <div class="form-group">
 			          <div class="col-md-12">
-			            <label><input type="checkbox">I agree to the <a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>
-			          </div>
-			        </div>
-			        <div class="form-group">
-			          <div class="col-md-12">
-							<input type="submit" name="register" value="Register">
+                      <input type="submit" name="verify_email" value="Verify Email">
 						 
 			            <!-- <a href="dashboard1.html" type="submit" value="Create account" class="btn btn-info">Create account</a>
 			            <a href="signin.html" class="pull-right">Login</a> -->
