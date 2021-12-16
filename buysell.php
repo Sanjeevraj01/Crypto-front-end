@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="buy/signup-login.css">
 </head>
 <body>
-
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -16,12 +15,14 @@
  
     if (isset($_POST["register"]))
     {
+        
         // $name = $_POST["name"];
-        // $email = $_POST["mail"];
+        // $email = $_POST["email"];
         // $password = $_POST["password"];
         $name = "vj";
         $email = "sanjuofficial01@gmail.com";
         $password = "123";
+        
  
         $mail = new PHPMailer(true);
  
@@ -34,17 +35,17 @@
  
             $mail->SMTPAuth = true;
  
-            $mail->Username = 'crptotest7@gmail.com';
+            $mail->Username = 'kbpicture123@gmail.com';
  
-            $mail->Password = 'Sanjeevraj01';
+            $mail->Password = 'leenabiju';
  
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
  
             $mail->Port = 587;  
  
-            $mail->setFrom('Cryptowallet01@gmail.com', 'your otp is');
+            $mail->setFrom('Unknown@gmail.com', 'Cryptomaker');
  
-            $mail->addAddress("sanjuofficial01@gmail.com", $name);
+            $mail->addAddress($email, $name);
  
             $mail->isHTML(true);
  
@@ -59,7 +60,7 @@
  
             $conn = mysqli_connect("localhost:3306", "root", "", "crypto");
  
-            $sql = "INSERT INTO users(name, email) VALUES ('" . $name . "', '" . $email . "',)";
+            $sql = "INSERT INTO users(name, email, password, verification_code, email_verified_at) VALUES ('" . $name . "', '" . $email . "', '" . $encrypted_password . "', '" . $verification_code . "', NULL)";
             mysqli_query($conn, $sql);
  
             header("Location: email-verification.php?email=" . $email);
@@ -69,6 +70,7 @@
         }
     }
 ?>
+
 
     <div class="row-fluid">
         <div class="col-md-4  col-sm-6  col-xs-12 login-box">
